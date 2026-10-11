@@ -2,7 +2,7 @@
 
 Ctrl+F for questions. Ask any web page a question and Smart Find highlights the passages that answer it, then jumps you straight to them.
 
-<!-- demo GIF goes here -->
+![Smart Find answering "why did the computer keep throwing alarms during the landing?" on the Apollo 11 Wikipedia article](docs/demo.gif)
 
 Built on [Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev), TypeSafe's fast decision model.
 
