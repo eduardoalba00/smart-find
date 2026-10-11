@@ -18,12 +18,15 @@
   button:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
   #status { color: var(--ok); font-size: 14px; }
   p { margin: 0; color: var(--muted); font-size: 14px; }
+  a { color: var(--accent); }
+  #welcome { color: var(--fg); font-size: 15px; }
   kbd { font: 12px ui-monospace, Consolas, monospace; border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; color: var(--fg); }
 </style>
 </head>
 <body>
 <main>
   <h1>Smart Find</h1>
+  <p id="welcome" hidden>Welcome! Paste your TypeSafe API key below to start asking pages questions. Don't have one? Get it from <a href="https://docs.typesafe.ai/introduction/quickstart" target="_blank" rel="noopener">TypeSafe</a>.</p>
   <div class="card">
     <label for="key">TypeSafe API key</label>
     <input id="key" type="password" autocomplete="off" spellcheck="false" placeholder="apikey_…">

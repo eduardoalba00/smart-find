@@ -17,16 +17,18 @@ async function openPanel(tab) {
 
 // Local development convenience: if extension/dev-key.json exists (it is gitignored), use its
 // key until one is saved in the options page.
-chrome.runtime.onInstalled.addListener(async () => {
+// On first install without a key, open the options page so new users know where to put it.
+chrome.runtime.onInstalled.addListener(async ({ reason }) => {
   const { apiKey } = await chrome.storage.local.get("apiKey");
   if (apiKey) return;
   try {
     const res = await fetch(chrome.runtime.getURL("dev-key.json"));
     const { apiKey: devKey } = await res.json();
-    if (devKey) await chrome.storage.local.set({ apiKey: devKey });
+    if (devKey) return chrome.storage.local.set({ apiKey: devKey });
   } catch {
-    // no dev key file; the panel will ask for a key
+    // no dev key file
   }
+  if (reason === "install") chrome.runtime.openOptionsPage();
 });
 
 chrome.action.onClicked.addListener(openPanel);

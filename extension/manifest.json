@@ -3,15 +3,30 @@
   "name": "Smart Find",
   "version": "0.1.0",
   "description": "Ask any page a question and jump to the passages that answer it. Powered by Jev.",
+  "homepage_url": "https://github.com/eduardoalba00/smart-find",
   "minimum_chrome_version": "116",
-  "permissions": ["activeTab", "scripting", "storage"],
-  "host_permissions": ["https://api.typesafe.ai/*"],
-  "background": { "service_worker": "background.js", "type": "module" },
-  "action": { "default_title": "Smart Find" },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.typesafe.ai/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Smart Find"
+  },
   "options_page": "options.html",
   "commands": {
     "toggle-smart-find": {
-      "suggested_key": { "default": "Ctrl+Shift+Space", "mac": "MacCtrl+Shift+Space" },
+      "suggested_key": {
+        "default": "Ctrl+Shift+Space",
+        "mac": "MacCtrl+Shift+Space"
+      },
       "description": "Open Smart Find on this page"
     }
   }
